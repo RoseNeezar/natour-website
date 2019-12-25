@@ -8,7 +8,7 @@
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
   &:hover {
     transform: translateY(-0.3rem);
@@ -31,6 +31,13 @@
       background-color: $color-white;
     }
   }
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+    &::after {
+      background-color: $color-primary;
+    }
+  }
 
   &::after {
     content: "";
@@ -51,5 +58,28 @@
     /* make keyframe 0% run at start and not wait until animation start */
 
     /* for animation to run at same time with above animation else it will run after above finish finish ie: button will present 1st then run animation */
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    font-size: $default-font-size;
+    transition: all 0.2s;
+  }
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-2px);
+  }
+  &:active {
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(0);
   }
 }
